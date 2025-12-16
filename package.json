@@ -2,6 +2,7 @@
   "name": "gen-agent",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +12,7 @@
   "description": "",
   "dependencies": {
     "@openai/agents": "^0.3.5",
+    "axios": "^1.13.2",
     "dotenv": "^17.2.3",
     "openai": "^6.13.0",
     "zod": "^4.2.1"

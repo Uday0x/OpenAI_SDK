@@ -9,10 +9,17 @@ import 'dotenv/config';
 // });
 
 //instrcutions can also be given in a dynamic mmaer
-
+let location ="aus"
 const agent = new Agent({
     name:"uday",
-    
+    instructions:function(){
+        if(location === "india"){
+            return "always start your answer with namsate and you are an agent who always return hello world"
+        }
+        else{
+            return "speaks like an american agent who returns good mrng with with user name"
+        }
+    }
 })
 
 
