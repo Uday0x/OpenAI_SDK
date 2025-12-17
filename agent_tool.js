@@ -10,6 +10,13 @@ import axios from "axios";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+//for strcutured output 
+
+const weatherResultSchema=z.object({
+    degree_c:z.number().describe("the degree celius of the temp"),
+    condition:z.string().describe("condition of the weather")
+})
+
 //creating tools
 const weatherTool = tool({
   description: "returns the current weather information for the given city",
@@ -51,6 +58,7 @@ Steps:
 2. Use emailTool to send that weather report to the user.
 `,
   tools: [weatherTool, emailTool],
+  outputType:weatherResultSchema
 });
 
 async function main(query = "") {
