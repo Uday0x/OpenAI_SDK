@@ -1,11 +1,11 @@
 // Multi-agent system design patterns
 //its better of to create a agent which does specfic work instead of creating an allrounder agent
+//scope should be as limited as possible
 //we have two types 
 //Manager (agent as a tool)
 //in this one agent tries to handle everything similar example of customer care agent tries to handle refund
 
 import { Agent , run } from "@openai/agents"
-import 'dotenv/config';  //important unless u give your apikey in the global dependency
 const bookingAgent = new Agent({
     name:"Booking Agent",
     instructions:"answer booking questions and modify reservations"
