@@ -22,6 +22,7 @@ import { z } from "zod"
 //create a mathsInput agent which takes care of the input
 const mathsInput  = new Agent({
     name:"Math query checker",
+    model: "gpt-4.1-mini",
     instructions:`
     You are an input guardRail agent that checks if the user query is a maths question or not
     Rules:
@@ -37,6 +38,7 @@ const mathsInput  = new Agent({
 //now u can the write the code guardrail
 const mathInputGuardRail ={
     name:"Math Input guardRail",
+    
     execute:async({ input })=>{
         const result = await run(mathsInput,input)
         return {
